@@ -1,0 +1,14 @@
+Code Functionality
+The provided C++ code defines a function named tips that calculates how many times a floating point number can be halved before it drops below or becomes equal to a tiny threshold value of 0.00001. In the main function, the tips function is called with an initial speed argument of 39.7, and the resulting count is printed to the standard output.
+
+How It Works
+The function starts by taking a float parameter named speed. It initializes an integer counter named count to zero. A while loop checks whether the current value of speed is strictly greater than 0.00001. Inside the loop, count is incremented by one, and speed is divided by two. This division repeated in a loop effectively reduces speed by half during each iteration. Once speed drops to 0.00001 or lower, the loop terminates and the function returns the accumulated count.
+
+Time Complexity
+The time complexity of this code is O(log N), where N represents the initial speed divided by the threshold value of 0.00001. Because the input value is repeatedly divided by 2 until it reaches a constant lower bound, the number of operations grows logarithmically relative to the magnitude of the input value. For the given input of 39.7, the loop executes exactly 22 times.
+
+Space Complexity
+The auxiliary space complexity is O(1) constant space because the function only uses a fixed number of primitive variables, count and speed, requiring minimal memory regardless of the input value.
+
+Sample Output
+22

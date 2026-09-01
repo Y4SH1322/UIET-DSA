@@ -1,0 +1,44 @@
+PROJECT README
+
+Project Title: Menu Driven Singly Linked List in C++
+
+Overview
+This C++ program implements a menu driven singly linked list data structure. It prompts the user to specify an initial size and input elements to build the list. Once initialized, it presents a user interface menu to perform dynamic operations such as inserting elements at a given position, deleting elements from a specific position, searching for a key to find its index position, displaying all current elements, and exiting the program.
+
+Code Architecture
+The program uses a Node class containing an integer data field and a pointer to the next node. The main function handles the interactive loop, choice selection through a switch statement, dynamic node allocation and deallocation using the new and delete operators, and safe pointer manipulations to avoid null reference crashes.
+
+Time Complexity Analysis
+Linked list creation runs in O(N) time where N is the initial size, as it loops N times to append elements.
+Insertion operation runs in O(P) time where P is the target position, requiring traversal up to the insertion index.
+Deletion operation runs in O(P) time where P is the target position, requiring traversal to the node preceding the target.
+Search operation runs in O(N) time in the worst case to check all nodes sequentially for the given key.
+Display operation runs in O(N) time to traverse and print every node from head to tail.
+Space complexity is O(N) because memory is dynamically allocated for N nodes.
+
+Sample Output Execution
+
+Enter the size of Linked List : 3
+10
+20
+30
+
+MENU
+
+1. Insert Element
+2. Delete Element
+3. Search Element
+4. Display Array
+5. Exit
+Enter your choice: 4
+10 20 30
+
+MENU
+
+1. Insert Element
+2. Delete Element
+3. Search Element
+4. Display Array
+5. Exit
+Enter your choice: 5
+Exiting program...

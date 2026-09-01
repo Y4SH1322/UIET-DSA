@@ -1,0 +1,25 @@
+First Repeating Element Finder
+
+This project contains two C++ implementations to find the 1-based index position of a repeating element in an array.
+
+Code Overview
+Both programs take an integer size input from the user, populate an array with integers, and search for repeated values. The first program uses nested loops to compare elements. The second program uses a hash map (unordered_map) to store the latest index of each element and then checks if an element appears at an index different from its saved index in the map.
+
+Time Complexity
+
+First Implementation (Nested Loops):
+Worst Case Time Complexity: O(n^2) because it uses nested loops to check every previous element.
+Space Complexity: O(1) auxiliary space (excluding the array storage).
+
+Second Implementation (Unordered Map):
+Worst Case Time Complexity: O(n) average time complexity because hash map insertions and lookups take O(1) time on average.
+Space Complexity: O(n) auxiliary space to store elements in the hash map.
+
+Sample Output
+
+Enter size of array :5
+Enter the Elements in array :10 20 30 20 50
+4th position
+
+Note on Non-Standard C++ Feature
+Both programs use Variable Length Arrays (int arr[n];), which is a GCC extension and not part of the standard C++ language specification. For standard C++, dynamic memory allocation using std::vector arr(n); is recommended.

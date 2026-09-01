@@ -1,0 +1,34 @@
+Move Zeros to End of Array - C++ Implementations
+
+This project contains three C++ implementations for moving all zeros in an integer array to the end while retaining non-zero elements.
+
+Overview of Implementations
+
+First Approach: Two-Pass Overwrite
+The first program uses a single pointer index to keep track of where the next non-zero element should be placed. It iterates through the array and copies every non-zero element to the position marked by index, incrementing index each time. Once all non-zero elements are placed, a second loop fills the remaining positions from index to the end of the array with zeros. This method maintains the relative order of the non-zero elements.
+
+Second Approach: Nested Loop Swap
+The second program scans the array for a zero element using an outer loop. When a zero is found, an inner loop searches for the very next non-zero element coming after it and swaps them immediately. After performing the search and swap logic inside the main loop, it prints intermediate results during iteration. This approach also maintains the relative order of non-zero elements.
+
+Third Approach: Two-Pointer Opposite Ends
+The third program uses two pointers, l starting at index 0 and r starting at index n-1. It moves toward the center. If arr[l] is zero and arr[r] is non-zero, it swaps them and adjusts both pointers. If arr[l] is already non-zero, l moves right. If arr[r] is zero, r moves left. This approach minimizes operations but does not preserve the relative order of non-zero elements.
+
+Complexity Analysis
+
+First Approach
+Time Complexity: O(n) because it iterates over the array twice in separate linear loops.
+Space Complexity: O(1) auxiliary space beyond the input array storage.
+
+Second Approach
+Time Complexity: O(n^2) in the worst case due to the nested loops searching for non-zero elements.
+Space Complexity: O(1) auxiliary space.
+
+Third Approach
+Time Complexity: O(n) because the left and right pointers together traverse the array at most once.
+Space Complexity: O(1) auxiliary space.
+
+Sample Output
+
+Enter size of array: 6
+Enter array elements: 1 0 3 0 5 0
+Array after moving zeros to the end: 1 3 5 0 0 0

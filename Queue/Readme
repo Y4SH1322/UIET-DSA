@@ -1,0 +1,38 @@
+Queue Implementation in C++
+
+This document explains two C++ implementations of the Queue data structure: one using the C++ Standard Template Library (STL) queue container, and another built manually using a singly linked list.
+
+Overview
+A queue operates on the First-In, First-Out (FIFO) principle. Elements are added at the rear and removed from the front.
+
+Implementation 1: STL Queue
+The first snippet wraps basic STL queue functions (`std::queue<int>`) into helper functions: push, pop, and Isempty.
+
+Implementation 2: Linked List Queue
+The second snippet builds a dynamic queue using a custom `Node` structure containing data and a pointer to the next node. Pointers for `front` and `rear` track the queue boundaries.
+
+Operations and Time Complexities
+
+STL Queue Implementation
+Push Operation: Adds an element to the back of the queue. Time Complexity is O(1).
+Pop Operation: Removes the element at the front. Time Complexity is O(1).
+IsEmpty Check: Checks if the queue contains no elements. Time Complexity is O(1).
+
+Linked List Queue Implementation
+Push Operation: Allocates a new node and attaches it to the rear pointer. Time Complexity is O(1).
+Pop Operation: Removes the node at the front pointer and frees memory. Time Complexity is O(1).
+IsEmpty Check: Evaluates whether front pointer is NULL. Time Complexity is O(1).
+Display Operation: Traverses the list from front to rear to print elements. Time Complexity is O(n), where n is the number of elements.
+
+Space Complexity
+Both implementations use O(n) space complexity to store n elements.
+
+Sample Output for Code 1 (STL Queue)
+Removed: 10
+Queue is not empty
+
+Sample Output for Code 2 (Linked List Queue)
+10 20 30
+Removed: 10
+20 30
+Queue is not empty

@@ -1,0 +1,11 @@
+The code takes an array input from the user and attempts to find a missing number using the XOR bitwise operator. It first reads the size of the array and its elements. Then, it XORs values in a range and XORs elements from the array to isolate the missing value before printing the result.
+
+Time Complexity
+
+The program takes O(n) time to read the array elements. The two subsequent loops run at most n times, executing in O(n) time. Therefore, the overall time complexity is O(n), where n is the input size. Space complexity is O(n) for storing the array elements.
+
+Sample Output
+
+Enter size of array : 4
+Enter the Elements in array : 0 1 2 4
+Missing number: 3

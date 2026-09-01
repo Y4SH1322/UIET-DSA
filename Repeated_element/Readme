@@ -1,0 +1,18 @@
+Overview
+This program finds the first recurring element in an integer array using a hash map. It reads the array size and elements from standard input, tracks element frequencies sequentially, and prints the first number that reaches a frequency of two.
+
+How It Works
+The program allocates a fixed array of size 100 and prompts the user for the actual number of elements. It fills the array with values from standard input. Next, it iterates through the array from left to right while storing counts in an unordered map. As soon as an element's frequency count reaches two, the program immediately prints that element as the first duplicate and terminates with a return value of zero. If the loop completes without finding any repeated value, it displays a message stating that no duplicate is present.
+
+Time Complexity
+Average Time Complexity: O(n) where n is the number of elements in the array. Inserting into and searching an unordered map takes constant time O(1) on average, resulting in linear time across n elements.
+Worst Case Time Complexity: O(n squared) in the event of hash collisions within the unordered map, though in practice it remains linear for standard inputs.
+Space Complexity: O(n) to store up to n elements in the hash map.
+
+Sample Input and Output
+Input:
+Enter size of Input array: 6
+10 20 30 20 10 50
+
+Output:
+First duplicate element: 20

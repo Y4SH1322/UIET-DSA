@@ -1,0 +1,18 @@
+This code calculates the real roots of a quadratic equation using the quadratic formula. In the main function, it passes the coefficients a = 1, b = 8, and c = 12 into the Qroot function. First, the function calculates the discriminant d = b*b - 4*a*c, which equals 16 for these inputs. Since 16 is greater than zero, the code enters the second conditional branch for real and distinct roots. It calculates x1 = ((-8) + sqrt(16)) / 2 * 1 = (-8 + 4) / 2 * 1 = -2, and x2 = ((-8) - sqrt(16)) / 2 * 1 = (-8 - 4) / 2 * 1 = -6.
+
+However, there are three important issues in the current implementation.
+
+First, operator precedence error in the division: in C++, multiplication and division have the same precedence and associate from left to right. Writing `/ 2*a` divides the numerator by 2 and then multiplies the whole result by `a`. To correctly divide by `2a`, you must use parentheses around the denominator like `/ (2*a)`.
+
+Second, integer division truncation: the parameters and root variables are declared as `int`. If the roots or the discriminant steps yield non-integer values, decimal places will be silently truncated. Changing the data types of `a`, `b`, `c`, `d`, `x1`, and `x2` to `double` or `float` ensures accurate decimal results.
+
+Third, potential domain error in `sqrt`: when `d < 0`, the program still executes `sqrt(d)` before checking the `if(d < 0)` condition because `x1` and `x2` are evaluated before the conditional checks. This causes runtime errors or NaN results for imaginary roots. Calculating `x1` and `x2` inside the appropriate conditional blocks fixes this issue.
+
+Time Complexity
+The time complexity of this code is O(1) because all mathematical operations, including square root calculation and basic arithmetic, execute in constant time regardless of input size.
+
+Space Complexity
+The space complexity is O(1) as it uses a fixed amount of memory for local variables.
+
+Sample Output
+Roots are Real and DIstinct => -2 , -6
